@@ -65,31 +65,31 @@ Route::get('/matriculas', [MatriculasController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('matriculas');
 
-Route::get('/matriculas/create', [MatriculasController::class, 'create'])
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.create');
+// Route::get('/matriculas/create', [MatriculasController::class, 'create'])
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.create');
 
-Route::post('/matriculas', [MatriculasController::class, 'store'])
+// Route::post('/matriculas', [MatriculasController::class, 'store'])
 
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.store');
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.store');
 
-Route::get('/matriculas/{matricula}', [MatriculasController::class, 'show'])
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.show');
+// Route::get('/matriculas/{matricula}', [MatriculasController::class, 'show'])
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.show');
 
-Route::get('/matriculas/{matricula}/edit', [MatriculasController::class, 'edit'])
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.edit');
+// Route::get('/matriculas/{matricula}/edit', [MatriculasController::class, 'edit'])
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.edit');
 
-Route::put('/matriculas/{matricula}', [MatriculasController::class, 'update'])
+// Route::put('/matriculas/{matricula}', [MatriculasController::class, 'update'])
 
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.update');
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.update');
 
-Route::delete('/matriculas/{matricula}', [MatriculasController::class, 'destroy'])
-    ->middleware(['auth', 'verified'])
-    ->name('matriculas.destroy');
+// Route::delete('/matriculas/{matricula}', [MatriculasController::class, 'destroy'])
+//     ->middleware(['auth', 'verified'])
+//     ->name('matriculas.destroy');
 
 
 
