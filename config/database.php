@@ -93,6 +93,12 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'sslmode' => env('DB_SSLMODE', 'prefer'),
+        'options' => extension_loaded('pdo_mysql') && env('APP_ENV') !== 'testing' && env('APP_ENV') !== 'local' ? array_filter([
+            PDO::MYSQL_ATTR_SSL_CA => resource_path('certificates/certificate.crt'),
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true,
+        ]) : [],
+
     ],
 
     /*
@@ -125,7 +131,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
